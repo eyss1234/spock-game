@@ -78,7 +78,7 @@ function stopConfettiInner() {
 }
 
 function removeConfettiInner() {
-	stopConfetti();
+	stopConfettiInner();
 	particles = [];
 }
 
@@ -129,3 +129,5 @@ function updateParticles() {
 		}
 	}
 }
+
+export { startConfetti, removeConfettiInner };
