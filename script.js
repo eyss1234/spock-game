@@ -83,13 +83,18 @@ function displayComputerChoice() {
 
 // Check result, increase scores, update text
 function updateScore(playerChoice) {
-//  console.log(playerChoice, computerChoice);
- if (playerChoice === computerChoice) {
-  resultText.textContent = "It's a tie!";
- } else {
-  const choice = choices[playerChoice];
-  console.log(choice);
- }
+  //  console.log(playerChoice, computerChoice);
+  if (playerChoice === computerChoice) {
+    resultText.textContent = "It's a tie...";
+  } else {
+    const choice = choices[playerChoice];
+    // console.log(choice.defeats.indexOf(computerChoice));
+    if (choice.defeats.indexOf(computerChoice) > -1) {
+      resultText.textContent = 'You Won!'
+      playerScoreNumber++;
+      playerScoreEl.textContent = playerScoreNumber;
+    }
+  }
 }
 
 // Call functions to process turn
