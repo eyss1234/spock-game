@@ -2,7 +2,7 @@ const playerScoreEl = document.getElementById('player-score');
 const playerChoiceEl = document.getElementById('player-choice');
 const computerScoreEl = document.getElementById('computer-score');
 const computerChoiceEl = document.getElementById('computer-choice');
-const resultText = document.getElementById('resutText');
+const resultText = document.getElementById('resultText');
 
 const playerRock = document.getElementById('playerRock');
 const playerPaper = document.getElementById('playerPaper');
@@ -83,7 +83,13 @@ function displayComputerChoice() {
 
 // Check result, increase scores, update text
 function updateScore(playerChoice) {
- console.log(playerChoice, computerChoice);
+//  console.log(playerChoice, computerChoice);
+ if (playerChoice === computerChoice) {
+  resultText.textContent = "It's a tie!";
+ } else {
+  const choice = choices[playerChoice];
+  console.log(choice);
+ }
 }
 
 // Call functions to process turn
