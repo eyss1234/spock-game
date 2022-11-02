@@ -93,6 +93,10 @@ function updateScore(playerChoice) {
       resultText.textContent = 'You Won!'
       playerScoreNumber++;
       playerScoreEl.textContent = playerScoreNumber;
+    } else {
+      resultText.textContent = 'You Lost!'
+      computerScoreNumber++;
+      computerScoreEl.textContent = computerScoreNumber;
     }
   }
 }
